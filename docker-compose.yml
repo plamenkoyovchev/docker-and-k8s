@@ -19,3 +19,10 @@ services:
       - ASPNETCORE_URLS=http://*:5000
     ports:
       - "5000:5000"
+  globoseq:
+    image: datalust/seq
+    restart: unless-stopped
+    ports:
+      - "5342:80"
+    environment:
+      - ACCEPT_EULA=Y
